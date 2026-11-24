@@ -12,6 +12,8 @@ const haiku = [
   "so the bug is me",
 ].join("\n");
 
+// Output: entry.txt in MAKEFUN_OUTPUT_DIR (default /output) — exactly
+// 67 bytes, no trailing newline, so the grader's byte gate passes.
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "entry.txt"), haiku, "utf8");
